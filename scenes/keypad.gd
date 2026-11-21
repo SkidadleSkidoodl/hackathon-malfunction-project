@@ -80,8 +80,8 @@ func _on_0_pressed() -> void:
 		typed_text += '0'
 		label.text = typed_text
 func _on_cancel_pressed() -> void:
-	if typed_text != passcode:
-		confirmation = 3
+	typed_text = typed_text.left(-1)
+	label.text = typed_text
 func _on_confirm_pressed() -> void:
 	number_of_guesses += 1
 	if number_of_guesses < guesses_allowed:

@@ -20,6 +20,11 @@ offset_right = 40.0
 offset_bottom = 55.0
 script = ExtResource("2_35ejc")
 
+[node name="square" type="Sprite2D" parent="Control" unique_id=675379328]
+position = Vector2(-8, 18.999973)
+scale = Vector2(2.8437498, 0.34375045)
+texture = SubResource("DrawableTexture2D_g7bqp")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1841946240]
 layout_mode = 1
 anchors_preset = -1
@@ -35,6 +40,8 @@ offset_bottom = 161.0
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer" unique_id=1471452862]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+scroll_active = false
 
 [node name="Row 1" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=616545368]
 layout_mode = 2
@@ -110,10 +117,6 @@ text = "0 *#    "
 [node name="confirm" type="Button" parent="Control/VBoxContainer/Row 4" unique_id=1415285953]
 layout_mode = 2
 text = "    ✓    "
-
-[node name="square" type="Sprite2D" parent="Control" unique_id=675379328]
-position = Vector2(362, -161)
-texture = SubResource("DrawableTexture2D_g7bqp")
 
 [connection signal="pressed" from="Control/VBoxContainer/Row 5/1" to="Control" method="_on_1_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Row 5/2" to="Control" method="_on_2_pressed"]

@@ -1,10 +1,47 @@
 [gd_scene format=3 uid="uid://boq1odotwaeo7"]
 
-[ext_resource type="Texture2D" uid="uid://5pcb602y2m0c" path="res://graphics/temp graphics/hand_card_front.png" id="1_5o8eb"]
+[ext_resource type="Texture2D" uid="uid://ivfbam8bmfxs" path="res://graphics/temp graphics/card hand but better back.png" id="1_atgm6"]
+[ext_resource type="Texture2D" uid="uid://bumrl4vctkfwd" path="res://graphics/temp graphics/card hand but better.png" id="2_mygw6"]
+[ext_resource type="Script" uid="uid://bh05yu7qe0m5k" path="res://scenes/hand_of_god.gd" id="3_mygw6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7bqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_atgm6")
+}],
+"loop": 1,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mygw6")
+}],
+"loop": 1,
+"name": &"front",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=435987997]
 
-[node name="HandCardFront" type="Sprite2D" parent="." unique_id=785760211]
-position = Vector2(70, -19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_5o8eb")
+[node name="hand_of_god" type="AnimatedSprite2D" parent="." unique_id=1986054246]
+sprite_frames = SubResource("SpriteFrames_g7bqp")
+animation = &"back"
+frame_progress = 0.7162798
+script = ExtResource("3_mygw6")
+
+[node name="flip_hand" type="Button" parent="hand_of_god" unique_id=1111098485]
+anchors_preset = -1
+anchor_top = 0.24900001
+anchor_bottom = 0.24900001
+offset_left = -808.0
+offset_top = -533.683
+offset_right = 634.0
+offset_bottom = -38.683014
+toggle_mode = true
+action_mode = 0
+flat = true
+
+[connection signal="button_down" from="hand_of_god/flip_hand" to="." method="_on_flip_hand_button_down"]
+[connection signal="button_up" from="hand_of_god/flip_hand" to="." method="_on_flip_hand_button_up"]
