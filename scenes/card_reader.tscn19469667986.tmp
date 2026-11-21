@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cqxqhnf6vi5xn"]
+
+[ext_resource type="Texture2D" uid="uid://vn22ihblrxw" path="res://graphics/temp graphics/card reader trans.png" id="1_prywy"]
+[ext_resource type="Script" uid="uid://dwk1g13tllyi3" path="res://scenes/keypad.gd" id="2_35ejc"]
+[ext_resource type="AudioStream" uid="uid://etahfyspu56l" path="res://music/button assorted 45.wav" id="3_hmpvb"]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_g7bqp"]
+
+[node name="card_reader" type="Node2D" unique_id=941940067]
+metadata/_edit_horizontal_guides_ = [22.0, -233.0]
+metadata/_edit_vertical_guides_ = [82.0]
+
+[node name="CardReaderTrans" type="Sprite2D" parent="." unique_id=105289799]
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_prywy")
+
+[node name="Control" type="Control" parent="." unique_id=1032546170]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 15.0
+offset_right = 40.0
+offset_bottom = 55.0
+script = ExtResource("2_35ejc")
+
+[node name="square" type="Sprite2D" parent="Control" unique_id=675379328]
+position = Vector2(-8, 18.999973)
+scale = Vector2(2.8437498, 0.34375045)
+texture = SubResource("DrawableTexture2D_g7bqp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1841946240]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.0500002
+anchor_top = 0.52500004
+anchor_right = -2.0500002
+anchor_bottom = 0.52500004
+offset_left = -15.999992
+offset_top = -13.0
+offset_right = 163.0
+offset_bottom = 161.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBoxContainer" unique_id=1471452862]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+scroll_active = false
+
+[node name="Row 1" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=616545368]
+layout_mode = 2
+
+[node name="1" type="Button" parent="Control/VBoxContainer/Row 1" unique_id=1894694598]
+layout_mode = 2
+flat = true
+
+[node name="2" type="Button" parent="Control/VBoxContainer/Row 1" unique_id=2022423889]
+layout_mode = 2
+flat = true
+
+[node name="3" type="Button" parent="Control/VBoxContainer/Row 1" unique_id=1126464603]
+layout_mode = 2
+flat = true
+
+[node name="Row 5" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1319686233]
+layout_mode = 2
+
+[node name="1" type="Button" parent="Control/VBoxContainer/Row 5" unique_id=1046553148]
+layout_mode = 2
+text = "1 abc  "
+
+[node name="2" type="Button" parent="Control/VBoxContainer/Row 5" unique_id=1530296901]
+layout_mode = 2
+text = "2 def  "
+
+[node name="3" type="Button" parent="Control/VBoxContainer/Row 5" unique_id=432031440]
+layout_mode = 2
+text = "3 ghi   "
+
+[node name="Row 2" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1696405837]
+layout_mode = 2
+
+[node name="4" type="Button" parent="Control/VBoxContainer/Row 2" unique_id=301290364]
+layout_mode = 2
+text = "4 jkl    "
+
+[node name="5" type="Button" parent="Control/VBoxContainer/Row 2" unique_id=833354616]
+layout_mode = 2
+text = "5 mno"
+
+[node name="6" type="Button" parent="Control/VBoxContainer/Row 2" unique_id=1381221744]
+layout_mode = 2
+text = "6 pqr  "
+
+[node name="Row 3" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=691726455]
+layout_mode = 2
+
+[node name="7" type="Button" parent="Control/VBoxContainer/Row 3" unique_id=725909785]
+layout_mode = 2
+text = "7 stu   "
+
+[node name="8" type="Button" parent="Control/VBoxContainer/Row 3" unique_id=1850307526]
+layout_mode = 2
+text = "8 vw   "
+
+[node name="9" type="Button" parent="Control/VBoxContainer/Row 3" unique_id=1662477822]
+layout_mode = 2
+text = "9 xyz  "
+
+[node name="Row 4" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=429551137]
+layout_mode = 2
+
+[node name="cancel" type="Button" parent="Control/VBoxContainer/Row 4" unique_id=1956728345]
+layout_mode = 2
+text = "    ✕     "
+
+[node name="0" type="Button" parent="Control/VBoxContainer/Row 4" unique_id=927294166]
+layout_mode = 2
+text = "0 *#    "
+
+[node name="confirm" type="Button" parent="Control/VBoxContainer/Row 4" unique_id=1415285953]
+layout_mode = 2
+text = "    ✓    "
+
+[node name="button_press_sfx" type="AudioStreamPlayer2D" parent="Control" unique_id=629496537]
+stream = ExtResource("3_hmpvb")
+
+[connection signal="pressed" from="Control/VBoxContainer/Row 5/1" to="Control" method="_on_1_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 5/2" to="Control" method="_on_2_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 5/3" to="Control" method="_on_3_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 2/4" to="Control" method="_on_4_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 2/5" to="Control" method="_on_5_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 2/6" to="Control" method="_on_6_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 3/7" to="Control" method="_on_7_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 3/8" to="Control" method="_on_8_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 3/9" to="Control" method="_on_9_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 4/cancel" to="Control" method="_on_cancel_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 4/0" to="Control" method="_on_0_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Row 4/confirm" to="Control" method="_on_confirm_pressed"]

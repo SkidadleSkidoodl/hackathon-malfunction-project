@@ -2,10 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://vn22ihblrxw" path="res://graphics/temp graphics/card reader trans.png" id="1_prywy"]
 [ext_resource type="Script" uid="uid://dwk1g13tllyi3" path="res://scenes/keypad.gd" id="2_35ejc"]
+[ext_resource type="AudioStream" uid="uid://etahfyspu56l" path="res://music/button assorted 45.wav" id="3_hmpvb"]
 
 [sub_resource type="DrawableTexture2D" id="DrawableTexture2D_g7bqp"]
 
 [node name="card_reader" type="Node2D" unique_id=941940067]
+metadata/_edit_horizontal_guides_ = [22.0, -233.0]
+metadata/_edit_vertical_guides_ = [82.0]
 
 [node name="CardReaderTrans" type="Sprite2D" parent="." unique_id=105289799]
 scale = Vector2(1.1, 1.1)
@@ -116,6 +119,9 @@ text = "0 *#    "
 [node name="confirm" type="Button" parent="Control/VBoxContainer/Row 4" unique_id=1415285953]
 layout_mode = 2
 text = "    ✓    "
+
+[node name="button_press_sfx" type="AudioStreamPlayer2D" parent="Control" unique_id=629496537]
+stream = ExtResource("3_hmpvb")
 
 [connection signal="pressed" from="Control/VBoxContainer/Row 5/1" to="Control" method="_on_1_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Row 5/2" to="Control" method="_on_2_pressed"]

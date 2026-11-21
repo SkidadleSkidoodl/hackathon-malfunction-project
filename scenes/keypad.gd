@@ -3,6 +3,8 @@ extends Control
 var typed_text: String
 var passcode: String = "8005882300339143"
 var confirmation: int = 0
+@onready var button_press_sfx: AudioStreamPlayer2D = $button_press_sfx
+
 
 var number_of_guesses: int = 0
 var guesses_allowed: int = 3
@@ -43,47 +45,71 @@ func _on_1_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '1'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_2_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '2'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_3_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '3'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_4_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '4'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_5_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '5'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_6_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '6'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_7_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '7'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_8_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '8'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_9_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '9'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_0_pressed() -> void:
 	if buttons_enabled:
 		typed_text += '0'
 		label.text = typed_text
+		button_press_sfx.pitch_scale = randf_range(-1, 2)
+		button_press_sfx.play()
 func _on_cancel_pressed() -> void:
 	typed_text = typed_text.left(-1)
 	label.text = typed_text
+	button_press_sfx.pitch_scale = randf_range(-1, 2)
+	button_press_sfx.play()
 func _on_confirm_pressed() -> void:
 	number_of_guesses += 1
+	button_press_sfx.pitch_scale = randf_range(-1, 2)
+	button_press_sfx.play()
 	if number_of_guesses < guesses_allowed:
 		if typed_text == passcode:
 			square.modulate = Color(0,1,0)
