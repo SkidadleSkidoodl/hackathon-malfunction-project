@@ -1,14 +1,22 @@
 [gd_scene format=3 uid="uid://bdhno0eperm6l"]
 
+[ext_resource type="Script" uid="uid://baiw3oh5nu52g" path="res://scenes/intro.gd" id="1_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://uekfv058awmc" path="res://graphics/temp graphics/store_counter.jpg" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://dmocd8rvtud23" path="res://scenes/store_counter.gd" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://cqxqhnf6vi5xn" path="res://scenes/card_reader.tscn" id="4_p57ef"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7bqp"]
 
 [node name="Node2D" type="Node2D" unique_id=638105261]
-metadata/_edit_horizontal_guides_ = [-450.0]
+script = ExtResource("1_lbhrr")
+metadata/_edit_horizontal_guides_ = [-450.0, 1511.0]
 metadata/_edit_vertical_guides_ = [-600.0]
 
 [node name="StoreCounter" type="Sprite2D" parent="." unique_id=483449932]
+material = SubResource("ShaderMaterial_g7bqp")
 scale = Vector2(2, 2)
 texture = ExtResource("1_uwrxv")
+script = ExtResource("3_iywne")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=549053088]
 zoom = Vector2(1.1, 1.1)
@@ -17,3 +25,8 @@ limit_top = -450
 limit_right = 600
 limit_bottom = 450
 position_smoothing_enabled = true
+
+[node name="card_reader" parent="." unique_id=941940067 instance=ExtResource("4_p57ef")]
+position = Vector2(0, 0)
+
+[node name="intro_timer" type="Timer" parent="." unique_id=519321109]
