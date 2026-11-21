@@ -3,7 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://vn22ihblrxw" path="res://graphics/temp graphics/card reader trans.png" id="1_prywy"]
 [ext_resource type="Script" uid="uid://dwk1g13tllyi3" path="res://scenes/keypad.gd" id="2_35ejc"]
 
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_g7bqp"]
+
 [node name="card_reader" type="Node2D" unique_id=941940067]
+position = Vector2(219, 459)
 
 [node name="CardReaderTrans" type="Sprite2D" parent="." unique_id=105289799]
 scale = Vector2(1.1, 1.1)
@@ -91,6 +94,10 @@ text = "0 *#    "
 [node name="confirm" type="Button" parent="Control/VBoxContainer/Row 4" unique_id=1415285953]
 layout_mode = 2
 text = "    ✓    "
+
+[node name="square" type="Sprite2D" parent="Control" unique_id=675379328]
+position = Vector2(362, -161)
+texture = SubResource("DrawableTexture2D_g7bqp")
 
 [connection signal="pressed" from="Control/VBoxContainer/Row 1/1" to="Control" method="_on_1_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Row 1/2" to="Control" method="_on_2_pressed"]
