@@ -6,7 +6,6 @@
 [sub_resource type="DrawableTexture2D" id="DrawableTexture2D_g7bqp"]
 
 [node name="card_reader" type="Node2D" unique_id=941940067]
-position = Vector2(219, 459)
 
 [node name="CardReaderTrans" type="Sprite2D" parent="." unique_id=105289799]
 scale = Vector2(1.1, 1.1)
