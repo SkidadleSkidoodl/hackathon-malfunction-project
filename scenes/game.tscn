@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bdhno0eperm6l"]
+
+[ext_resource type="Texture2D" uid="uid://uekfv058awmc" path="res://graphics/temp graphics/store_counter.jpg" id="1_uwrxv"]
+
+[node name="Node2D" type="Node2D" unique_id=638105261]
+metadata/_edit_horizontal_guides_ = [-450.0]
+metadata/_edit_vertical_guides_ = [-600.0]
+
+[node name="StoreCounter" type="Sprite2D" parent="." unique_id=483449932]
+scale = Vector2(2, 2)
+texture = ExtResource("1_uwrxv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=549053088]
+zoom = Vector2(1.1, 1.1)
+limit_left = -600
+limit_top = -450
+limit_right = 600
+limit_bottom = 450
+position_smoothing_enabled = true

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://boq1odotwaeo7"]
+
+[ext_resource type="Texture2D" uid="uid://5pcb602y2m0c" path="res://graphics/temp graphics/hand_card_front.png" id="1_5o8eb"]
+
+[node name="Node2D" type="Node2D" unique_id=435987997]
+
+[node name="HandCardFront" type="Sprite2D" parent="." unique_id=785760211]
+position = Vector2(70, -19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5o8eb")
