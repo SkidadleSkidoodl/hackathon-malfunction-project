@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cqg548akrq5fd"
+path="res://.godot/imported/Poppy Shop Midpass.ogg-465c3aa502190ededbbc16e53018f3bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Poppy Shop Midpass.ogg"
+dest_files=["res://.godot/imported/Poppy Shop Midpass.ogg-465c3aa502190ededbbc16e53018f3bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

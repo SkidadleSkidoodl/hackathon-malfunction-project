@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://uekfv058awmc" path="res://graphics/temp graphics/store_counter.jpg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dmocd8rvtud23" path="res://scenes/store_counter.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://cqxqhnf6vi5xn" path="res://scenes/card_reader.tscn" id="4_p57ef"]
+[ext_resource type="AudioStream" uid="uid://cqg548akrq5fd" path="res://music/Poppy Shop Midpass.ogg" id="5_iywne"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7bqp"]
 
@@ -30,3 +31,8 @@ position_smoothing_enabled = true
 position = Vector2(0, 0)
 
 [node name="intro_timer" type="Timer" parent="." unique_id=519321109]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=451031776]
+stream = ExtResource("5_iywne")
+volume_db = -6.552
+autoplay = true
