@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ivfbam8bmfxs" path="res://graphics/temp graphics/card hand but better back.png" id="1_atgm6"]
 [ext_resource type="Texture2D" uid="uid://bumrl4vctkfwd" path="res://graphics/temp graphics/card hand but better.png" id="2_mygw6"]
 [ext_resource type="Script" uid="uid://bh05yu7qe0m5k" path="res://scenes/hand_of_god.gd" id="3_mygw6"]
+[ext_resource type="AudioStream" uid="uid://ei1776gfodkb" path="res://music/woosh 5.wav" id="4_7rv7y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g7bqp"]
 animations = [{
@@ -29,7 +30,7 @@ scale = Vector2(0.2, 0.2)
 [node name="hand_of_god" type="AnimatedSprite2D" parent="." unique_id=1986054246]
 sprite_frames = SubResource("SpriteFrames_g7bqp")
 animation = &"back"
-frame_progress = 0.3268633
+frame_progress = 0.6021556
 script = ExtResource("3_mygw6")
 
 [node name="flip_hand" type="Button" parent="hand_of_god" unique_id=1111098485]
@@ -44,6 +45,9 @@ toggle_mode = true
 button_pressed = true
 action_mode = 0
 flat = true
+
+[node name="woosh_sfx" type="AudioStreamPlayer2D" parent="hand_of_god" unique_id=308557750]
+stream = ExtResource("4_7rv7y")
 
 [connection signal="button_down" from="hand_of_god/flip_hand" to="." method="_on_flip_hand_button_down"]
 [connection signal="button_up" from="hand_of_god/flip_hand" to="." method="_on_flip_hand_button_up"]

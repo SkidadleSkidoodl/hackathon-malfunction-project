@@ -3,6 +3,48 @@
 [ext_resource type="Texture2D" uid="uid://vn22ihblrxw" path="res://graphics/temp graphics/card reader trans.png" id="1_prywy"]
 [ext_resource type="Script" uid="uid://dwk1g13tllyi3" path="res://scenes/keypad.gd" id="2_35ejc"]
 [ext_resource type="AudioStream" uid="uid://etahfyspu56l" path="res://music/button assorted 45.wav" id="3_hmpvb"]
+[ext_resource type="Texture2D" uid="uid://dnotpcbbkj4ht" path="res://graphics/temp graphics/stage_0_screen.png" id="3_seeos"]
+[ext_resource type="Texture2D" uid="uid://b0co1drahck" path="res://graphics/temp graphics/stage_1_screen.png" id="4_8fyl2"]
+[ext_resource type="Texture2D" uid="uid://bmm7281a1engm" path="res://graphics/temp graphics/stage_2_screen.png" id="5_3mgd4"]
+[ext_resource type="Texture2D" uid="uid://bb3qc2g5i663c" path="res://graphics/temp graphics/stage_3_screen.png" id="6_4b84y"]
+[ext_resource type="AudioStream" uid="uid://bbxfdi5vxq2ad" path="res://music/Windows XP Ding.wav" id="6_udbvg"]
+[ext_resource type="AudioStream" uid="uid://dh8a2qvwuatp" path="res://music/Windows XP Error.wav" id="7_3mgd4"]
+[ext_resource type="AudioStream" uid="uid://cq64x2i1gtx1o" path="res://music/Windows XP Logoff Sound.wav" id="10_l8u7v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7bqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_seeos")
+}],
+"loop": 1,
+"name": &"stage_0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8fyl2")
+}],
+"loop": 1,
+"name": &"stage_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3mgd4")
+}],
+"loop": 1,
+"name": &"stage_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4b84y")
+}],
+"loop": 1,
+"name": &"stage_3",
+"speed": 5.0
+}]
 
 [sub_resource type="DrawableTexture2D" id="DrawableTexture2D_g7bqp"]
 
@@ -21,6 +63,12 @@ offset_top = 15.0
 offset_right = 40.0
 offset_bottom = 55.0
 script = ExtResource("2_35ejc")
+
+[node name="screen" type="AnimatedSprite2D" parent="Control" unique_id=1490196820]
+position = Vector2(-8.500003, -119.41667)
+scale = Vector2(0.50277776, 0.5241497)
+sprite_frames = SubResource("SpriteFrames_g7bqp")
+animation = &"stage_3"
 
 [node name="square" type="Sprite2D" parent="Control" unique_id=675379328]
 position = Vector2(-8, 18.999973)
@@ -122,6 +170,15 @@ text = "    ✓    "
 
 [node name="button_press_sfx" type="AudioStreamPlayer2D" parent="Control" unique_id=629496537]
 stream = ExtResource("3_hmpvb")
+
+[node name="ding_sfx" type="AudioStreamPlayer2D" parent="Control" unique_id=2047043062]
+stream = ExtResource("6_udbvg")
+
+[node name="error_sfx" type="AudioStreamPlayer2D" parent="Control" unique_id=811146443]
+stream = ExtResource("7_3mgd4")
+
+[node name="logoff_sfx" type="AudioStreamPlayer2D" parent="Control" unique_id=438373214]
+stream = ExtResource("10_l8u7v")
 
 [connection signal="pressed" from="Control/VBoxContainer/Row 5/1" to="Control" method="_on_1_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/Row 5/2" to="Control" method="_on_2_pressed"]

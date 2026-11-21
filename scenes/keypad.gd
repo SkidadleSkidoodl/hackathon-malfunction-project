@@ -1,13 +1,20 @@
 extends Control
 
 var typed_text: String
-var passcode: String = "8005882300339143"
+var passcode: String = "0"
 var confirmation: int = 0
+
 @onready var button_press_sfx: AudioStreamPlayer2D = $button_press_sfx
+@onready var ding_sfx: AudioStreamPlayer2D = $ding_sfx
+@onready var error_sfx: AudioStreamPlayer2D = $error_sfx
+@onready var logoff_sfx: AudioStreamPlayer2D = $logoff_sfx
+
+
+var stage: int = 0
 
 
 var number_of_guesses: int = 0
-var guesses_allowed: int = 3
+var guesses_allowed: int = 999
 var timer = Timer.new()
 var flash = Timer.new()
 var square_is_red: bool = false
@@ -16,6 +23,17 @@ var buttons_enabled: bool = true
 @onready var label: RichTextLabel = $VBoxContainer/RichTextLabel
 @onready var square: Sprite2D = $square
 
+func _process(delta: float) -> void:
+	if stage == 0:
+		passcode = "1"
+		$screen.animation = "stage_0"
+	if stage == 1:
+		$screen.animation = "stage_1"
+	if stage == 2:
+		$screen.animation = "stage_2"
+		passcode = "8005882300339143"
+	if stage == 3:
+		$screen.animation = "stage_3"
 
 func _ready() -> void:
 	timer.autostart = false
@@ -112,14 +130,29 @@ func _on_confirm_pressed() -> void:
 	button_press_sfx.play()
 	if number_of_guesses < guesses_allowed:
 		if typed_text == passcode:
+			ding_sfx.play()
+			if stage == 2:
+				passcode = "8005882300339143"
+				if stage == 3:
+					logoff_sfx.play()
 			square.modulate = Color(0,1,0)
-			typed_text = "Correct"
-			label.text = typed_text
+			if stage == 0 || stage == 1:
+				typed_text = "Proceeding"
+				label.text = typed_text
+			else:
+				typed_text = "Correct"
+				label.text = typed_text
 			timer.start(0.5)
+			stage += 1
 		elif typed_text != passcode:
+			error_sfx.play()
 			square.modulate = Color(1,0,0)
-			typed_text = "Incorrect"
-			label.text = typed_text
+			if stage == 0 || stage == 1:
+				typed_text = "Wrong Answer"
+				label.text = typed_text
+			else:
+				typed_text = "Incorrect"
+				label.text = typed_text
 			timer.start(0.5)
 	else:
 		buttons_enabled = false
