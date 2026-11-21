@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://uekfv058awmc" path="res://graphics/temp graphics/store_counter.jpg" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dmocd8rvtud23" path="res://scenes/store_counter.gd" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://cqxqhnf6vi5xn" path="res://scenes/card_reader.tscn" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://boq1odotwaeo7" path="res://scenes/side_hand.tscn" id="4_u5sy4"]
 [ext_resource type="AudioStream" uid="uid://cqg548akrq5fd" path="res://music/Poppy Shop Midpass.ogg" id="5_iywne"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7bqp"]
@@ -18,6 +19,9 @@ material = SubResource("ShaderMaterial_g7bqp")
 scale = Vector2(2, 2)
 texture = ExtResource("1_uwrxv")
 script = ExtResource("3_iywne")
+
+[node name="Node2D" parent="StoreCounter" unique_id=435987997 instance=ExtResource("4_u5sy4")]
+position = Vector2(-202.99998, -67.49999)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=549053088]
 zoom = Vector2(1.1, 1.1)

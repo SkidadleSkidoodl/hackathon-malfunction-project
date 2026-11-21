@@ -24,11 +24,12 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D" unique_id=435987997]
+scale = Vector2(0.2, 0.2)
 
 [node name="hand_of_god" type="AnimatedSprite2D" parent="." unique_id=1986054246]
 sprite_frames = SubResource("SpriteFrames_g7bqp")
 animation = &"back"
-frame_progress = 0.7162798
+frame_progress = 0.3268633
 script = ExtResource("3_mygw6")
 
 [node name="flip_hand" type="Button" parent="hand_of_god" unique_id=1111098485]
@@ -40,6 +41,7 @@ offset_top = -533.683
 offset_right = 634.0
 offset_bottom = -38.683014
 toggle_mode = true
+button_pressed = true
 action_mode = 0
 flat = true
 

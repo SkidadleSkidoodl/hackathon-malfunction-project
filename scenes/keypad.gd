@@ -1,7 +1,7 @@
 extends Control
 
 var typed_text: String
-var passcode: String = "123"
+var passcode: String = "8005882300339143"
 var confirmation: int = 0
 
 var number_of_guesses: int = 0
